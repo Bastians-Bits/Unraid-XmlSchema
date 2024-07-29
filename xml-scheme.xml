@@ -1,0 +1,178 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/books"
+           xmlns="http://example.com/books"
+           elementFormDefault="qualified">
+
+  <xs:element name="Container" type="containerType">
+    <xs:annotation>
+      <xs:documentation>
+        The root element of the document. Contains the whole configuration passed to the runtime engine.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="containerType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            The Name of the Template.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Repository" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            The Repository of the Image.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Registry" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            The Registry in which the Image resides.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Network" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            The Network to connect the Container to.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MyIP" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            The IP address of the container, if applicable.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Shell" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            The Shell to use for the build-in Console.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Privileged" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>
+            Whether the Container runs privileged or not.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Support" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            A link to a support forum or help of any kind.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Project" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            A link to the projects Page.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Overview" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            A Summary of the Container.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Category" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            A category to use for the Community Application Plugin.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WebUI" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            The URL using which the Container is reachable.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TemplateURL" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            The Location of the Template.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Icon" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            The Location of the Icon to use in the UI.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExtraParams" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Additional Parameters to pass to the runtime engine before the image name.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PostArgs" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            Additional Parameter to pass to the runtime engine after the image name.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CPUset" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            A list of CPU core the container is only allowed to use.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DateInstalled" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>
+            The date of installation of the template.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DonateText" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            A Text to schow for donations.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DonateLink" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            A link to use for donations.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Requires" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>
+            A list of required dependencies for the container to work.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Config" type="xs:configType" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            A list of configurations for Bind-Mounts, Environment Variables and more.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="configType">
+      <xs:sequence>
+          TODO
+      </xs:sequence>
+  </xs:complexType>
+</xs:schema>
